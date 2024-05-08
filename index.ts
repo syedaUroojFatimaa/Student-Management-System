@@ -23,6 +23,10 @@ let studentId : string = "";
 let continueEnrollment = true;
 let students: student[] = []
 
+
+console.log("STUDENTS ARRAY", students);
+
+
 do {
     let action = await inquirer.prompt(
         {
@@ -54,7 +58,7 @@ do {
         
             let course = await inquirer.prompt({
                 type : "list",
-                name: "anser",
+                name: "answer",
                 message: "Please Select a Course",
                 choices: ["I.T", "WEB DEVELOPMENT", "GRAPHIC DESIGNING", "METAVERSE"]
             })
@@ -109,9 +113,9 @@ do {
                 message: "Please select a name",
                 choices: studentNameCheck
             })
-            let foundStudent= students.find(students => student.name === selectStudent.answer)
+            let foundStudent= students.find(student => student.name === selectStudent.answer)
             console.log(chalk.red("Student Information"));
-            console.log(foundStudent);
+            console.log("FOUND STUDENT==>",foundStudent);
             console.log("\n");
              
         }
